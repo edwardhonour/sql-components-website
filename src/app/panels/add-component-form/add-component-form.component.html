@@ -1,0 +1,45 @@
+<sql-form
+     [table]="'sql_component'"
+     [card]="'Y'"
+     [title]="'Add SQL Component'"
+     [bs_col]="'col-12'">
+
+     <sql-datepicker
+        [col]="'create_timestamp'"
+        [label]="'Create Date:'">
+
+     </sql-datepicker>
+    
+     <sql-input 
+        [col]="'component_id'"
+        [label]="'Component'"
+        [style]="'width:200px'">
+    </sql-input>
+    
+    <sql-input 
+    [col]="'component_name'"
+    [label]="'Component Name'"
+    [style]="'width:400px'">
+    </sql-input>
+
+    <sql-select 
+    [col]="'component_type'"
+    [sql]="'select component_type, title from sql_component_type order by title'"
+    [label]="'Component Type'">
+    </sql-select>
+
+    <sql-radio-group 
+    [col]="'uses_observable'"
+    [sql]="'select value, title from sql_yn'"
+    [label]="'Uses Observable'"></sql-radio-group>
+
+    <sql-textarea 
+    [col]="'description'"
+    [label]="'Description'"
+    [style]="'width:700px;'"></sql-textarea>
+
+    <sql-submit
+    [label]="'Save Record'"
+    [class]="'btn btn-primary'"></sql-submit>
+    
+</sql-form>
